@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family-Lobster&display=swap');
+
+$cardColor: #f6aaca;
+
+.card-container {
+  font-family: 'Lobster', cursive;
+  height: 35rem;
+  width: 20rem;
+  position: relative;
+  background-color: $cardColor;
+  overflow: hidden;
+  box-shadow: 0 0 10px gray;
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-rows: 55% 10% 5% 20% 10%;
+  grid-template-areas: 'img-section' 'name-section' 'title-section' 'desc-section' 'social-section';
+  text-align: center;
+  &:hover {
+    box-shadow: 0 0 20px gray;
+  }
+  .img-card-section {
+    grid-area: img-section;
+    overflow: hidden;
+    position: relative;
+
+    .img-card-square {
+      background-color: $cardColor;
+      height: 30rem;
+      width: 10rem;
+      position: absolute;
+      transform: rotate(-40deg);
+      bottom: -11rem;
+      left: -2rem;
+    }
+    .img-card-style {
+      height: 100%;
+      width: 35rem;
+    }
+  }
+
+  .name-card-section {
+    bottom: 4rem;
+    left: 1.5rem;
+    grid-area: name-section;
+    font-size: 1.8rem;
+    position: absolute;
+    color: #fff;
+  }
+
+  .title-card-section {
+    grid-area: title-section;
+    font-size: 1.5rem;
+    color: #b40c79;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+  }
+  .desc-card-section {
+    grid-area: desc-section;
+    margin: -1rem 1.5rem;
+  }
+
+  .social-card-section {
+    grid-area: social-section;
+    .social-card-style {
+      height: 2rem;
+      margin: 0 1rem;
+
+      transform: all 0.3s;
+      border-radius: 50%;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .profile-img-card {
+    position: absolute;
+    height: 12rem;
+    width: 10rem;
+    box-shadow: 0 0 0 2px #f6c0d6;
+    border-radius: 50%;
+    top: calc(50% - 18rem);
+    left: calc(50% - 12.4rem);
+    object-fit: cover;
+    object-position: top;
+  }
+
+  @media (max-width: 450px) {
+    height: 32rem;
+    width: 18rem;
+    .profile-img-card {
+      height: 10rem;
+      width: 10rem;
+      top: calc(50% - 16.6rem);
+      left: calc(50% - 11rem);
+    }
+    .desc-card-section {
+      margin: -1.8rem 1.5rem;
+    }
+    .title-card-section {
+      left: 1rem;
+    }
+    .name-card-section {
+      font-size: 1.6rem;
+    }
+  }
+}
